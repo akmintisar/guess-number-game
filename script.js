@@ -54,4 +54,6 @@ document.querySelector('.again').addEventListener('click', function () {
   randomNumber = '';
   document.querySelector('body').style.backgroundColor = 'rgb(207, 124, 0)';
   document.querySelector('.guess').value = '';
+  randomNumber = Math.trunc(Math.random() * 20 + 1);
+  console.log(randomNumber);
 });
