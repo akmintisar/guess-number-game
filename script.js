@@ -17,6 +17,7 @@ document.querySelector('.check').addEventListener('click', function () {
     ).textContent = `What's stopping you from entering a proper value?!`;
   } else if (inputValue == randomNumber) {
     document.querySelector('.message').textContent = `Correct Answer!`;
+    document.querySelector('body').style.backgroundColor = '#60b347';
     score++;
     document.querySelector('.score').textContent = score;
   } else if (inputValue > randomNumber) {
@@ -24,6 +25,7 @@ document.querySelector('.check').addEventListener('click', function () {
     score--;
     if (score < 1) {
       document.querySelector('.message').textContent = `GAME OVER`;
+      document.querySelector('body').style.backgroundColor = '#FF0000';
     } else {
       document.querySelector('.score').textContent = score;
     }
@@ -32,6 +34,7 @@ document.querySelector('.check').addEventListener('click', function () {
     score--;
     if (score < 1) {
       document.querySelector('.message').textContent = `GAME OVER`;
+      document.querySelector('body').style.backgroundColor = '#FF0000';
     } else {
       document.querySelector('.score').textContent = score;
     }
