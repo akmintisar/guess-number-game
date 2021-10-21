@@ -50,6 +50,7 @@ document.querySelector('.check').addEventListener('click', function () {
 });
 
 document.querySelector('.again').addEventListener('click', function () {
+  document.querySelector('.message').textContent = 'Start Guessing...';
   document.querySelector('.score').textContent = 20;
   randomNumber = '';
   document.querySelector('body').style.backgroundColor = 'rgb(207, 124, 0)';
