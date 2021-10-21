@@ -3,12 +3,13 @@ const result = document.querySelector('.message').textContent;
 console.log('from JS file');
 console.log(result);
 
-const randomNumber = Math.trunc(Math.random() * 20 + 1);
+let randomNumber = Math.trunc(Math.random() * 20 + 1);
 console.log(randomNumber);
-var score = 20;
+let score = 20;
+let highScore = 0;
 
 document.querySelector('.check').addEventListener('click', function () {
-  const inputValue = document.querySelector('.guess').value;
+  let inputValue = document.querySelector('.guess').value;
   console.log(inputValue);
 
   if (!inputValue) {
@@ -20,6 +21,13 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('body').style.backgroundColor = '#60b347';
     score++;
     document.querySelector('.score').textContent = score;
+    document.querySelector('.number').textContent = inputValue;
+
+    if (score > highScore) {
+      highScore = score;
+      console.log('highscore');
+      document.querySelector('.highscore').textContent = highScore;
+    }
   } else if (inputValue > randomNumber) {
     document.querySelector('.message').textContent = `You need to aim LOW`;
     score--;
@@ -39,4 +47,11 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = score;
     }
   }
+});
+
+document.querySelector('.again').addEventListener('click', function () {
+  document.querySelector('.score').textContent = 20;
+  randomNumber = '';
+  document.querySelector('body').style.backgroundColor = 'rgb(207, 124, 0)';
+  document.querySelector('.guess').value = '';
 });
