@@ -1,16 +1,13 @@
 'use strict';
 const result = document.querySelector('.message').textContent;
-console.log('from JS file');
-console.log(result);
 
 let randomNumber = Math.trunc(Math.random() * 20 + 1);
-console.log(randomNumber);
+
 let score = 20;
 let highScore = 0;
 
 document.querySelector('.check').addEventListener('click', function () {
   let inputValue = document.querySelector('.guess').value;
-  console.log(inputValue);
 
   if (!inputValue) {
     document.querySelector(
@@ -25,7 +22,7 @@ document.querySelector('.check').addEventListener('click', function () {
 
     if (score > highScore) {
       highScore = score;
-      console.log('highscore');
+
       document.querySelector('.highscore').textContent = highScore;
     }
   } else if (inputValue > randomNumber) {
@@ -56,5 +53,4 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('body').style.backgroundColor = 'rgb(207, 124, 0)';
   document.querySelector('.guess').value = '';
   randomNumber = Math.trunc(Math.random() * 20 + 1);
-  console.log(randomNumber);
 });
